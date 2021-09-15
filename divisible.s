@@ -4,47 +4,47 @@
 
 __start:
 
-                li $v0, 5                #read int
+                li $v0, 5                # read int
                 syscall
                 li $t6, 1
                 add $t0, $v0, 0
 
-CASE0:        li $t1, 2
+CASE0:          li $t1, 2               # divide by 2
                 div $t0, $t1
                 mfhi $t2
                 bne $zero, $t2, CASE1
                 li $t5, 1
-                li $v0, 4                #print string
+                li $v0, 4                # print string
                 la $a0, str2
                 syscall
                 j End
 
-CASE1:        li $t1, 3
+CASE1:          li $t1, 3                # divide by 3
                 div $t0, $t1
                 mfhi $t2
                 bne $zero, $t2, CASE2
                 li $t5, 1
-                li $v0, 4                #print string
+                li $v0, 4                # print string
                 la $a0, str3
                 syscall
                 j End
 
-CASE2:        li $t1, 5
+CASE2:          li $t1, 5                # divide by 5
                 div $t0, $t1
                 mfhi $t2
                 bne $zero, $t2, DEF
                 li $t5, 1
-                li $v0, 4                #print string
+                li $v0, 4                # print string
                 la $a0, str5
                 syscall
                 j End
 
-DEF:        beq $t5, $t6, End
-                li $v0, 4                #print string
+DEF:            beq $t5, $t6, End        # not divisible
+                li $v0, 4                # print string
                 la $a0, str0
                 syscall
 
-End:        li $v0, 10 #End
+End:            li $v0, 10               # End
                 syscall
 
 .data

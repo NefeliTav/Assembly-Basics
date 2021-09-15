@@ -14,7 +14,7 @@ __start:
         li $v0,4 
         syscall   # display end of line 
         move $a0,$t0 
-        jal TENNIS
+        jal THERE
         li $v0,10   
         syscall   # exit  
         
@@ -22,14 +22,14 @@ __start:
  
  
 # start of procedure
-TENNIS:
+THERE:
         addi $sp, $sp, -4
         sw $ra, 0($sp)
         
         beqz $a0, END
         
         addi $a0, -1
-        jal TENNIS
+        jal THERE
         addi $a0, 1
         li $v0,1  
         syscall  

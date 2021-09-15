@@ -8,7 +8,7 @@ __start:
         la $t0, num1
         lw $t1, 0($t0)
         
-		add $s0, $t1, $t1
+	add $s0, $t1, $t1
         addu $s1, $t1, $t1
         
         add $a0, $s0 0        #moves int from s0 to a0

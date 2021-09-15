@@ -26,6 +26,7 @@ mflo $t4                             #quotient
 mfhi $t5                             #remainder
 
 #Output
+
  la $a0,quotient
  li $v0,4
  syscall 							 #print quotient
